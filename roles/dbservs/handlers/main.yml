@@ -1,0 +1,2 @@
+- name: restarted dbserver
+  service: name=mariadb.service state=restarted

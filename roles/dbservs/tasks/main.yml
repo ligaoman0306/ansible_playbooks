@@ -1,0 +1,8 @@
+- name: install dbserver
+  yum: name=mariadb-server state=latest
+- name: install configuration for dbserver
+  copy: src=my.cnf dest=/etc/my.cnf
+  notify:
+    - restarted dbserver
+- name: starting dbserver
+  service: name=mariadb.service state=started
